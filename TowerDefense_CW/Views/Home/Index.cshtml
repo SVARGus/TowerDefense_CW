@@ -1,0 +1,36 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@section HeadScripts{
+    <!--<script src="js/TD/Canvas.js" type="text/javascript" defer="defer"></script>-->
+    <!--<script src="js/TD/Canvas.js" type="module"></script>-->
+}
+
+@section BottomBodyScripts {
+    <script language="JavaScript" type="module">
+        import { Canvas } from "/js/TD/Canvas.js";
+
+        Canvas.Init("gameField");
+
+    </script>
+}
+
+@* <script language="JavaScript">
+    Canvas.Init("gameField");
+</script> *@
+<div class="text-center" style="
+    background-image: url('./Assets/Bacground_sky bridge.png');
+    background-repeat: no-repeat;
+    background-position: top center;
+    height: 79vh;
+    width: 100%;
+    display: block;
+    position: absolute;
+    left: 0;
+    background-size: 100% auto;">
+	<h1 class="display-4">Всем привет</h1>
+    <canvas id="gameField" width="400" height="400" style="width: 75%; height: 75%"></canvas>
+    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
