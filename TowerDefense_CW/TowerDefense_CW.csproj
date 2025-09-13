@@ -16,8 +16,8 @@
 
   <ItemGroup>
     <Folder Include="wwwroot\Assets\Tower Weapons\" />
-    <Folder Include="wwwroot\js\TD\DataModel\" />
     <Folder Include="wwwroot\js\TD\Base\" />
+    <Folder Include="wwwroot\js\TD\DataModel\" />
   </ItemGroup>
 
 </Project>
