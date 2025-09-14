@@ -29,11 +29,11 @@ export class Canvas {
      * @param id {string} id canvas элемент на странице
      * @constructor
      */
-    Init(id) {
+    Init() {
         /**
          * @type {HTMLCanvasElement}
          */
-        let gameField = document.getElementById(id);
+        let gameField = this._htmlCanvasElement;
 
         console.log("gameField получено [", gameField, "].",
             " Проверка на тип - [", gameField instanceof HTMLCanvasElement, "]");
@@ -51,6 +51,6 @@ export class Canvas {
      * @function
      */
     Clear() {
-
+        
     }
 }

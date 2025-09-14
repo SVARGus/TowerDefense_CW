@@ -14,6 +14,7 @@
         import {FpsMeterResource} from "./js/TD/Resources/FpsMeterResource.js";
 
         const canvas = new Canvas("gameField");
+        canvas.Init();
         const graphicEngine = new GraphicEngine(canvas);
 
         const stopEngine = function (_graphicEngine) {
@@ -22,7 +23,7 @@
 
         setTimeout(stopEngine, 10000, graphicEngine);
 
-        Canvas.Init("gameField");
+        //Canvas.Init("gameField");
 
         graphicEngine.Init();
         graphicEngine.LoadResources([new FpsMeterResource(25, 75, 25, 75)])

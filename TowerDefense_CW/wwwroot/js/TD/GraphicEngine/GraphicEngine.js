@@ -25,9 +25,9 @@ export class GraphicEngine {
     constructor(canvas) {
         this._canvas = canvas;
     }
-    // Переделать ниже 
+    
     Init() {
-        this._timer.Init(this.__redraw, 10);
+        this._timer.Init(() => this.__redraw(), 10);
     }
 
     get isResourcesLoaded() {
