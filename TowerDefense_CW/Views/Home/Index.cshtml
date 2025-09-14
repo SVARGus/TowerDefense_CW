@@ -9,10 +9,27 @@
 
 @section BottomBodyScripts {
     <script language="JavaScript" type="module">
-        import { Canvas } from "/js/TD/Canvas.js";
+        import {Canvas} from "./js/TD/Canvas.js";
+        import {GraphicEngine} from "./js/TD/GraphicEngine/GraphicEngine.js";
+        import {FpsMeterResource} from "./js/TD/Resources/FpsMeterResource.js";
+
+        const canvas = new Canvas("gameField");
+        const graphicEngine = new GraphicEngine(canvas);
+
+        const stopEngine = function (_graphicEngine) {
+            _graphicEngine.Stop()
+        };
+
+        setTimeout(stopEngine, 10000, graphicEngine);
 
         Canvas.Init("gameField");
 
+        graphicEngine.Init();
+        graphicEngine.LoadResources([new FpsMeterResource(25, 75, 25, 75)])
+        graphicEngine.Start();
+
+        const fieldSize = canvas.fieldSize
+        console.log(`Canvas fiels size is [${fieldSize.width}, ${fieldSize.height}]`)
     </script>
 }
 

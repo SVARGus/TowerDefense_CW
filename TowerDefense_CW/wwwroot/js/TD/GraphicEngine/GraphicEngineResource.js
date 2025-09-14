@@ -1,10 +1,11 @@
-﻿import { CanvasHelper } from "../Utilites/CanvasHelper.js";
+﻿import { IGraphicEngineResource } from "../Interfaces/IGraphicEngineResource.js";
+import { CanvasHelper } from "../Utilites/CanvasHelper.js";
 
 /**
  * @abstract абстрактный класс для работы с отображением элемента сцены
  */
 
-export class GraphicEngineResource {
+export class GraphicEngineResource extends IGraphicEngineResource {
     /**
      * @type {number}
      * @protected
@@ -32,6 +33,7 @@ export class GraphicEngineResource {
     _canvasHelper;
 
     constructor() {
+        super();
         if (this.constructor === GraphicEngineResource) {
             throw new Error("GraphicEngineResource is abstract class and can not be initialized");
         }
