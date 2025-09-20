@@ -35,7 +35,7 @@ export class GraphicEngineResource extends IGraphicEngineResource {
     constructor() {
         super();
         if (this.constructor === GraphicEngineResource) {
-            throw new Error("GraphicEngineResource is abstract class and can not be initialized");
+            throw new Error(`${typeof this} is abstract class and can not be initialized`);
         }
     }
 
