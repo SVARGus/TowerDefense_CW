@@ -32,6 +32,8 @@ export class Canvas {
         if (context === null) {
             throw new Error("Can't get canvas context.");
         }
+
+        this._canvasContext = context;
     }
 
     get fieldSize() {

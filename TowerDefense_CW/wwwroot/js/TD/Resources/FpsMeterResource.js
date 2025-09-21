@@ -3,7 +3,7 @@ import { CanvasHelper } from "../Utilites/CanvasHelper.js";
 import { Canvas } from "../Canvas.js";
 import { FieldSize } from "../DataModel/FieldSize.js";
 import { Rect } from "../DataModel/Rect.js";
-import { bottom, right } from "@poppersjs/core/index.js";
+//import { bottom, right } from "@poppersjs/core/index.js";
 
 export class FpsMeterResource extends GraphicEngineResource {
     /**
