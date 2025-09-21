@@ -18,19 +18,28 @@
      */
     _timeout = null;
 
+    /**
+     * Переменная _this для вызова переданной в Init функции
+     * @type {any}
+     * @private
+     */
+    _context = null;
+
     //setTimeout -> Запускает определенную функцию, через определенный промежуток времени один раз
     //setInterval -> запускает определенную функцию, через определенный промежуток времени циклом
 
     /**
      * 
-     * @param func {function()}
-     * @param timeout {int}
+     * @param func {function(_this:any)}
+     * @param timeout {number}
+     * @param _this {any}
      * @constructor
      * @returns {Array}
      */
-    Init(func, timeout) {
+    Init(func, timeout, _this) {
         this._function = func;
         this._timeout = timeout;
+        this._context = _this;
     }
 
     Start() {
@@ -58,7 +67,7 @@
      */
 
     __OnTimeout(_this) {
-        _this._function();
+        _this._function(_this._context);
         _this._timer = setTimeout(_this.__OnTimeout, _this._timeout, _this);
     }
 }

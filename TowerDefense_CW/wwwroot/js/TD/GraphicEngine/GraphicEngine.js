@@ -4,6 +4,10 @@ import { Canvas } from "../Canvas.js";
 
 export class GraphicEngine {
 
+    /**
+     * @type {GraphicEngineTimer}
+     * @private
+     */
     _timer = new GraphicEngineTimer();
 
     /**
@@ -27,37 +31,41 @@ export class GraphicEngine {
     }
     
     Init() {
-        this._timer.Init(() => this.__redraw(), 10);
+        this._timer.Init(this.__redraw, 10, this); 
     }
 
     get isResourcesLoaded() {
         return this._loadedResources !== undefined;
     }
 
-    __redraw() {
+
+    /**
+     * 
+     * @param _this {GraphicEngine}
+     * @private
+     */
+    __redraw(_this) {
         //console.log("Timer works Yoo")
 
-        this._canvas.Clear()
+        const canvasSize = _this._canvas.fieldSize;
 
-        if (this.isResourcesLoaded) {
+        _this._canvas.Clear(canvasSize)
+
+        if (_this.isResourcesLoaded) {
             for (
                 /**
                  * @type {IGraphicEngineResource}
                  * @name loadedResource
                  */
-                let loadedResource of this._loadedResources) {
-                    loadedResource.OnDraw(this._canvas)
+                let loadedResource of _this._loadedResources) {
+                    loadedResource.OnDraw(_this._canvas)
             }
         }
     }
 
-    //__temp() {
-    //    console.log("Timer works Yoo");
-    //}
-
     /**
      * 
-     * @param resources Array<IGraphicEngineResource>
+     * @param resources {Array<IGraphicEngineResource>}
      * @function
      */
     LoadResources(resources) {
