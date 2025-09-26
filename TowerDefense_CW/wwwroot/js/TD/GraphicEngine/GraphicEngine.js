@@ -47,18 +47,18 @@ export class GraphicEngine {
     __redraw(_this) {
         //console.log("Timer works Yoo")
 
-        const canvasSize = _this._canvas.fieldSize;
+        //const canvasSize = _this._canvas.fieldSize;
 
         _this._canvas.Clear(canvasSize)
 
         if (_this.isResourcesLoaded) {
             for (
                 /**
-                 * @type {IGraphicEngineResource}
+                 * @type {GraphicEngineResource}
                  * @name loadedResource
                  */
                 let loadedResource of _this._loadedResources) {
-                    loadedResource.OnDraw(_this._canvas)
+                    loadedResource.Draw()
             }
         }
     }

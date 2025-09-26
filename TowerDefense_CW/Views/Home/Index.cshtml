@@ -11,7 +11,7 @@
     <script language="JavaScript" type="module">
         // import {Canvas} from "../../wwwroot/js/TD/Canvas.js";
         import {Canvas} from "./js/TD/Canvas.js";
-        // import {GraphicEngine} from "../../wwwroot/js/TD/GraphicEngine/GraphicEngine.js";
+        //import {GraphicEngine} from "../../wwwroot/js/TD/GraphicEngine/GraphicEngine.js";
         import {GraphicEngine} from "./js/TD/GraphicEngine/GraphicEngine.js";
         // import {FpsMeterResource} from "../../wwwroot/js/TD/Resources/FpsMeterResource.js";
         import {FpsMeterResource} from "./js/TD/Resources/FpsMeterResource.js";
@@ -20,20 +20,31 @@
         const canvas = new Canvas("gameField");
         const graphicEngine = new GraphicEngine(canvas);
 
-        const stopEngine = function (_graphicEngine) {
+
+        const stopEngine = function (_graphicEngine, _resources) {
             _graphicEngine.Stop()
+
+            for (const resource of _resources) {
+                resource.Destroy()
+            }
         };
 
-        setTimeout(stopEngine, 10000, graphicEngine);
-
-        canvas.Init("gameField");
-
+        canvas.Init();
         graphicEngine.Init();
-        graphicEngine.LoadResources([new FpsMeterResource(25, 75, 25, 75)])
+
+        const resources = [];
+
+        resources.push(new FpsMeterResource(80, 90, 10, 15, canvas));
+
+        graphicEngine.LoadResources(resources);
+
+        setTimeout(stopEngine, 10000, graphicEngine, resources);
+
         graphicEngine.Start();
 
         const fieldSize = canvas.fieldSize
         console.log(`Canvas fiels size is [${fieldSize.width}, ${fieldSize.height}]`)
+
     </script>
 }
 

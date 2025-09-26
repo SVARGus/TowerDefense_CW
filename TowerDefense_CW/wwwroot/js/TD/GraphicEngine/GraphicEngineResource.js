@@ -55,7 +55,7 @@ export class GraphicEngineResource extends AbstractResource { // заменит�
      * @param {Canvas} canvas
      */
 
-    constructor(prcentRect, canvas) {
+    constructor(percentRect, canvas) {
         super();
         if (this.constructor === GraphicEngineResource) {
             throw new Error(`${typeof this} is abstact class and can not be initialized`);
@@ -81,25 +81,28 @@ export class GraphicEngineResource extends AbstractResource { // заменит�
      * @param {FieldSize} fieldSize
      */
     Draw(fieldSize) {
-        this.__PrepareDraw(fieldSize);
+        this._PrepareDraw(fieldSize);
         this._OnDraw();
     }
 
-    // Проверить надоли править __PrepareDraw после просмотра занятия от 19.09.25!!!
+    // Проверить надоли править _PrepareDraw после просмотра занятия от 19.09.25!!!
     /**
      * 
      * @param {FieldSize} fieldSize
      */
-    __PrepareDraw(fieldSize) {
-        if ((this._fieldSize.height !== fieldSize.height) ||
-            (this._fieldSize.width !== fieldSize.width)) {
-            this.Init(fieldSize);
-        }
+    _PrepareDraw() {
+        throw new Error("prepareDraw cannot be called in abstract class");
     }
 
 
 
     _OnDraw() {
         throw new Error("onDrow cannot be called in abstract class");
+    }
+
+    
+    OnDraw() {
+        this._PrepareDraw();
+        this._OnDraw();
     }
 }

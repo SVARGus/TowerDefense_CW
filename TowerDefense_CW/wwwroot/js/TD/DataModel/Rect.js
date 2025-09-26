@@ -56,6 +56,14 @@ export class Rect {
         this._bottom = value;
     }
 
+    get width() {
+        return this._right - this._left;
+    }
+
+    get height() {
+        return this._bottom - this._top;
+    }
+
     /**
      * 
      * @param {number} left

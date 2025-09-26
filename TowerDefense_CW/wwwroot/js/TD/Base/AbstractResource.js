@@ -106,14 +106,17 @@ export class AbstractResource {
     }
 
     constructor() {
-        //super();
         if (this.constructor === AbstractResource) {
             throw new Error(`${typeof this} is abstract class and can not be initialized`);
         }
     }
 
-    OnDraw(canvas) {
+    OnDraw() {
         throw new Error(`${typeof this}.OnDraw not implemented.`);
+    }
+
+    Destroy() {
+
     }
 
 }
