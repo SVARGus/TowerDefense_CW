@@ -8,7 +8,7 @@ import { Rect } from "../DataModel/Rect.js";
  * @abstract абстрактный класс для работы с отображением элемента сцены
  */
 
-export class GraphicEngineResource extends AbstractResource { // заменить потом на AbstractResource
+export class GraphicEngineResource extends AbstractResource {
 
     /**
      * @type {Canvas}

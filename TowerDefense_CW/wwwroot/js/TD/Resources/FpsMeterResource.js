@@ -63,7 +63,7 @@ export class FpsMeterResource extends GraphicEngineResource {
 
     _OnDraw() {
         const text = `FPS: ${this._currentFps}`;
-        const red = "FF0000";
+        const red = "#FF0000";
         const shadow = "#000000";
         const width = this._resourceRect.width;
         const height = this._resourceRect.height;

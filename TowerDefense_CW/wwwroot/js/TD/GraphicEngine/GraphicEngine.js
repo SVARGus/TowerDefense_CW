@@ -1,5 +1,5 @@
-﻿import { GraphicEngineTimer } from './GraphicEngineTimer.js';
-import { GraphicEngineResource } from "../Interfaces/GraphicEngineResource.js";
+﻿import { GraphicEngineTimer } from "../GraphicEngine/GraphicEngineTimer.js";
+import { GraphicEngineResource } from "../GraphicEngine/GraphicEngineResource.js";
 import { Canvas } from "../Canvas.js";
 
 export class GraphicEngine {
@@ -65,7 +65,7 @@ export class GraphicEngine {
 
     /**
      * 
-     * @param resources {Array<IGraphicEngineResource>}
+     * @param resources {Array<GraphicEngineResource>}
      * @function
      */
     LoadResources(resources) {
