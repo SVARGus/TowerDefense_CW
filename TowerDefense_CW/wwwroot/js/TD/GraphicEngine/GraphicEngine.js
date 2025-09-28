@@ -1,5 +1,5 @@
 ﻿import { GraphicEngineTimer } from './GraphicEngineTimer.js';
-import { IGraphicEngineResource } from "../Interfaces/IGraphicEngineResource.js";
+import { GraphicEngineResource } from "../Interfaces/GraphicEngineResource.js";
 import { Canvas } from "../Canvas.js";
 
 export class GraphicEngine {
@@ -11,7 +11,7 @@ export class GraphicEngine {
     _timer = new GraphicEngineTimer();
 
     /**
-     * @type {Array<IGraphicEngineResource>}
+     * @type {Array<GraphicEngineResource>}
      * @private
      */
     _loadedResources = undefined
@@ -20,7 +20,7 @@ export class GraphicEngine {
      * @type {Canvas}
      * @private
      */
-    _canvas = undefined
+    _canvas; /*= undefined*/
 
     /**
      * 
@@ -49,7 +49,7 @@ export class GraphicEngine {
 
         //const canvasSize = _this._canvas.fieldSize;
 
-        _this._canvas.Clear(canvasSize)
+        _this._canvas.Clear()
 
         if (_this.isResourcesLoaded) {
             for (

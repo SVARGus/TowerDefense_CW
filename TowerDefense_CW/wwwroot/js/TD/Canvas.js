@@ -51,9 +51,8 @@ export class Canvas {
     /**
      * @public
      * @function
-     //* @param canvasSize {FieldSize}
      */
-    Clear(canvasSize) {
+    Clear() {
         this.ResetTransform();
         this._canvasContext.clearRect(0, 0, this.fieldSize.width, this.fieldSize.height);
     }

@@ -1,7 +1,6 @@
-﻿//import { IGraphicEngineResource } from "../Interfaces/IGraphicEngineResource.js"; //  позже закоментировать
-import { CanvasHelper } from "../Utilites/CanvasHelper.js";
+﻿import { CanvasHelper } from "../Utilites/CanvasHelper.js";
 import { Canvas } from "../Canvas.js";
-import { FieldSize } from "../DataModel/FieldSize.js";
+//import { FieldSize } from "../DataModel/FieldSize.js";
 import { AbstractResource } from "../Base/AbstractResource.js";
 import { Rect } from "../DataModel/Rect.js";
 
@@ -43,15 +42,9 @@ export class GraphicEngineResource extends AbstractResource { // заменит�
      */
     _canvasHelper;
 
-    ///**
-    // * @type {FieldSize}
-    // * @private
-    // */
-    //_fieldSize;
-
     /**
      * 
-     * @param {Rect} prcentRect
+     * @param {Rect} percentRect
      * @param {Canvas} canvas
      */
 
@@ -66,40 +59,10 @@ export class GraphicEngineResource extends AbstractResource { // заменит�
         this.resourceRectPercents = percentRect;
     }
 
-    // Проверить надоли править Init после просмотра занятия от 19.09.25!!!
-    /**
-     * 
-     * @param {FieldSize} fieldSize
-     * @constructor
-     */
-    Init(fieldSize) {
-        this._fieldSize = fieldSize;
-    }
-
-    /**
-     * 
-     * @param {FieldSize} fieldSize
-     */
-    Draw(fieldSize) {
-        this._PrepareDraw(fieldSize);
+    Draw() {
+        this._PrepareDraw();
         this._OnDraw();
     }
-
-    // Проверить надоли править _PrepareDraw после просмотра занятия от 19.09.25!!!
-    /**
-     * 
-     * @param {FieldSize} fieldSize
-     */
-    _PrepareDraw() {
-        throw new Error("prepareDraw cannot be called in abstract class");
-    }
-
-
-
-    _OnDraw() {
-        throw new Error("onDrow cannot be called in abstract class");
-    }
-
     
     OnDraw() {
         this._PrepareDraw();
