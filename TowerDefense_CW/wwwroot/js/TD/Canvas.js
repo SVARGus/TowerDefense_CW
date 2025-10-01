@@ -1,5 +1,6 @@
 ﻿//import { GraphicEngine } from "./GraphicEngine/GraphicEngine.js"
 import { FieldSize } from "./DataModel/FieldSize.js";
+import { Rect } from "./DataModel/Rect.js";
 
 export class Canvas {
     /**
@@ -115,6 +116,19 @@ export class Canvas {
         this.DrawFilledText(text, shadowColor, textWidth, textHeight);
         this._canvasContext.translate(-shadowDistance, -shadowDistance);
         this.DrawFilledText(text, textColor, textWidth, textHeight);
+    }
+
+    /**
+     * Рисует картинку
+     * @param {HTMLImageElement} image - загруженная картинка
+     * @param {Rect} sourceRect - исходная область копирования в канвас
+     * @param {number} targetWidth - целевая ширина отображения отностиельно [0, 0]
+     * @param {number} targetHeight - целевая высота отображения отностиельно [0, 0]
+     * @constructor
+     */
+    DrawImage(image, sourceRect, targetWidth, targetHeight) {
+        this._canvasContext.drawImage(image, sourceRect.left, sourceRect.top, sourceRect.width, sourceRect.height,
+            0, 0, targetWidth, targetHeight);
     }
 
 }

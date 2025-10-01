@@ -15,6 +15,7 @@
         import {GraphicEngine} from "./js/TD/GraphicEngine/GraphicEngine.js";
         // import {FpsMeterResource} from "../../wwwroot/js/TD/Resources/FpsMeterResource.js";
         import {FpsMeterResource} from "./js/TD/Resources/FpsMeterResource.js";
+        import {ImageResource} from "./js/TD/Resources/ImageResource.js";
 
 
         const canvas = new Canvas("gameField");
@@ -33,6 +34,8 @@
         graphicEngine.Init();
 
         const resources = [];
+
+        resources.push(new ImageResource(40, 60, 40, 60, canvas));
 
         resources.push(new FpsMeterResource(80, 90, 10, 15, canvas));
 

@@ -14,8 +14,4 @@
     <Content Remove="Views\Home\Back.cshtml" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="wwwroot\Assets\Tower Weapons\" />
-  </ItemGroup>
-
 </Project>
