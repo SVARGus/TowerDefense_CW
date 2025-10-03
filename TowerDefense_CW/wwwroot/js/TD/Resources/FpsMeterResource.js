@@ -1,9 +1,6 @@
-﻿import { GraphicEngineResource } from "../GraphicEngine/GraphicEngineResource.js";
-//import { CanvasHelper } from "../Utilites/CanvasHelper.js";
+﻿import { GraphicEngineResource } from "../Game/GraphicEngine/GraphicEngineResource.js";
 import { Canvas } from "../Canvas.js";
-//import { FieldSize } from "../DataModel/FieldSize.js";
 import { Rect } from "../DataModel/Rect.js";
-//import { bottom, right } from "@poppersjs/core/index.js";
 
 export class FpsMeterResource extends GraphicEngineResource {
 
@@ -27,10 +24,32 @@ export class FpsMeterResource extends GraphicEngineResource {
     _intervalId;
 
     /**
+     * @type {string}
+     * @private
+     */
+    _currentFpsText;
+
+    /**
      * @type {DOMMatrix}
      * @private
      */
     _transform;
+
+    /**
+     * 
+     * @type {string}
+     * @private
+     * @constant
+     */
+    _red = "#FF0000";
+
+    /**
+     * 
+     * @type {string}
+     * @private
+     * @constant
+     */
+    _shadow = "#000000";
 
     /**
      * @constructor
@@ -47,11 +66,13 @@ export class FpsMeterResource extends GraphicEngineResource {
         this._currentFps = 0;
         this._fpsCounter = 0;
         this._transform = canvas.GetTransform(super.resourceRect.left, super.resourceRect.top, 0);
+        this._currentFpsText = "";
     }
 
     __computeCurrentFps(_this) {
         _this._currentFps = _this._fpsCounter;
         _this._fpsCounter = 0;
+        _this._currentFpsText = `FPS: ${_this._currentFps}`;
     }
 
 
@@ -62,13 +83,10 @@ export class FpsMeterResource extends GraphicEngineResource {
     }
 
     _OnDraw() {
-        const text = `FPS: ${this._currentFps}`;
-        const red = "#FF0000";
-        const shadow = "#000000";
         const width = this._resourceRect.width;
         const height = this._resourceRect.height;
 
-        this._canvas.DrawFilledShadowedText(text, red, shadow, width, height, 1);
+        this._canvas.DrawFilledShadowedText(this._currentFpsText, this._red, this._shadow, width, height, 1);
     }
 
     Destroy() {

@@ -1,4 +1,4 @@
-﻿import { CanvasHelper } from "../Utilites/CanvasHelper.js";
+﻿//import { CanvasHelper } from "../Utilites/CanvasHelper.js";
 import { Canvas } from "../Canvas.js";
 //import { FieldSize } from "../DataModel/FieldSize.js";
 import { AbstractResource } from "../Base/AbstractResource.js";
@@ -8,7 +8,7 @@ import { Rect } from "../DataModel/Rect.js";
  * @abstract абстрактный класс для работы с отображением элемента сцены
  */
 
-export class GraphicEngineResource extends AbstractResource {
+export class MoveEngineResource extends AbstractResource {
 
     /**
      * @type {Canvas}
@@ -37,10 +37,10 @@ export class GraphicEngineResource extends AbstractResource {
     // */
     //_bottom;
     /**
-     * @type {CanvasHelper}
-     * @protected
-     */
-    _canvasHelper;
+    // * @type {CanvasHelper}
+    // * @protected
+    // */
+    //_canvasHelper;
 
     /**
      * 
@@ -50,7 +50,7 @@ export class GraphicEngineResource extends AbstractResource {
 
     constructor(percentRect, canvas) {
         super();
-        if (this.constructor === GraphicEngineResource) {
+        if (this.constructor === MoveEngineResource) {
             throw new Error(`${typeof this} is abstact class and can not be initialized`);
         }
 

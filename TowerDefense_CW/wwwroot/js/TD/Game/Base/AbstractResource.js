@@ -1,5 +1,5 @@
-﻿import { Rect } from "../DataModel/Rect.js";
-import { FieldSize } from "../DataModel/FieldSize.js";
+﻿import { Rect } from "../../DataModel/Rect.js";
+import { FieldSize } from "../../DataModel/FieldSize.js";
 //import { type } from "jquery";
 //import { left } from "@popperjs/core/index.js";
 

@@ -1,6 +1,6 @@
 ﻿import { GraphicEngineTimer } from "../GraphicEngine/GraphicEngineTimer.js";
 import { GraphicEngineResource } from "../GraphicEngine/GraphicEngineResource.js";
-import { Canvas } from "../Canvas.js";
+import { Canvas } from "../../Canvas.js";
 
 export class GraphicEngine {
 

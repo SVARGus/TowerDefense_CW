@@ -1,4 +1,4 @@
-﻿import { GraphicEngineResource } from "../GraphicEngine/GraphicEngineResource.js";
+﻿import { GraphicEngineResource } from "../Game/GraphicEngine/GraphicEngineResource.js";
 import { Canvas } from "../Canvas.js";
 import { Rect } from "../DataModel/Rect.js";
 import { TowerAssetSettings } from "../AssetSettings/TowerAssetSettings.js"
