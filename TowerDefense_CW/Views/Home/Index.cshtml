@@ -2,7 +2,7 @@
     ViewData["Title"] = "Home Page";
 }
 
-@section HeadScripts{
+@section HeadScripts {
     <!--<script src="js/TD/Canvas.js" type="text/javascript" defer="defer"></script>-->
     <!--<script src="js/TD/Canvas.js" type="module"></script>-->
 }
@@ -17,10 +17,8 @@
         import {FpsMeterResource} from "./js/TD/Resources/FpsMeterResource.js";
         import {ImageResource} from "./js/TD/Resources/ImageResource.js";
 
-
         const canvas = new Canvas("gameField");
         const graphicEngine = new GraphicEngine(canvas);
-
 
         const stopEngine = function (_graphicEngine, _resources) {
             _graphicEngine.Stop()
@@ -47,13 +45,9 @@
 
         const fieldSize = canvas.fieldSize
         console.log(`Canvas fiels size is [${fieldSize.width}, ${fieldSize.height}]`)
-
     </script>
 }
 
-@* <script language="JavaScript">
-    Canvas.Init("gameField");
-</script> *@
 <div class="text-center" style="
     background-image: url('./Assets/Bacground_sky bridge.png');
     background-repeat: no-repeat;
@@ -64,8 +58,7 @@
     position: absolute;
     left: 0;
     background-size: 100% auto;">
-	<h1 class="display-4">Всем привет</h1>
+    <h1 class="display-4">Всем привет</h1>
     <canvas id="gameField" width="400" height="400" style="width: 75%; height: 75%"></canvas>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
-

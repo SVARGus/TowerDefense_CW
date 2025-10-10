@@ -14,7 +14,7 @@ if (!app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseStaticFiles();
+app.UseStaticFiles(); // Эта строка должна быть уже есть
 
 app.UseRouting();
 
